@@ -1,8 +1,13 @@
 package student;
-import java.util.List;
+
+import java.time.Month;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 /**
  * Display reminders of students having a birthday soon.
+ *
  * @author you
  */
 public class StudentApp {
@@ -10,19 +15,38 @@ public class StudentApp {
 	/**
 	 * Print the names (and birthdays) of students having a birtday in the
 	 * specified month.
-	 * @param students list of students
-	 * @param month the month to use in selecting bithdays
+	 *
+	 * @param students
+	 * 		list of students
+	 * @param filter
+	 * 		condition of student
 	 */
-	public void filterAndPrint( List<Student> students, int month ) {
-		for(Student s : students ) {
-			if (s.getBirthdate().getMonthValue() == month)
-	                  System.out.println( s );
-		}
+	public void filterAndPrint(List<Student> students, Predicate<Student> filter, Consumer<Student> action, Comparator<Student> by) {
+		students.stream().filter(filter).sorted(by).forEach(action);
 	}
 	
 	public static void main(String[] args) {
+		Month month = Month.MAY;
+
 		List<Student> students = Registrar.getInstance().getStudents();
 		StudentApp app = new StudentApp();
-		app.filterAndPrint(students, 5 /* may */);
+
+		Predicate<Student> predicate = s -> s.getBirthdate().getMonth().equals(month);
+		Consumer<Student> consumer = s -> System.out.println(s.toString());
+
+		Comparator<Student> byFirstName = (s1, s2) -> {
+			return s1.getFirstname().compareTo(s2.getFirstname());
+		};
+		Comparator<Student> byLastName = (s1, s2) -> {
+			return s1.getLastname().compareTo(s2.getLastname());
+		};
+		Comparator<Student> byBirthDate = (s1, s2) -> {
+			return s1.getBirthdate().compareTo(s2.getBirthdate());
+		};
+		Comparator<Student> byID = (s1, s2) -> {
+			return s1.getId().compareTo(s2.getId());
+		};
+
+		app.filterAndPrint(students, predicate, consumer, byLastName);
 	}
 }
