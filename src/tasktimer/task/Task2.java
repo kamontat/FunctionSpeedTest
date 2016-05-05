@@ -27,15 +27,15 @@ public class Task2 implements Runnable {
 	@Override
 	public void run() {
 		int count = 0;
-		long totalsize = 0;
+		long totalSize = 0;
 		String word = null;
 
 		try {
 			while ((word = br.readLine()) != null) {
-				totalsize += word.length();
+				totalSize += word.length();
 				count++;
 			}
-			double averageLength = ((double) totalsize) / (count > 0 ? count: 1);
+			double averageLength = ((double) totalSize) / (count > 0 ? count: 1);
 			System.out.printf("Average length of %,d words is %.2f\n", count, averageLength);
 		} catch (IOException e) {
 			System.out.println(e);
@@ -49,6 +49,6 @@ public class Task2 implements Runnable {
 
 	@Override
 	public String toString() {
-		return "Starting task: read words using BufferedReader.readLine() with a loop";
+		return "read words using BufferedReader.readLine() with a loop";
 	}
 }

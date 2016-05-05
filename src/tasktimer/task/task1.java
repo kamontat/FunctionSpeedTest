@@ -27,6 +27,6 @@ public class Task1 implements Runnable {
 
 	@Override
 	public String toString() {
-		return "Starting task: read words using Scanner and a while loop";
+		return "read words using Scanner and a while loop";
 	}
 }
