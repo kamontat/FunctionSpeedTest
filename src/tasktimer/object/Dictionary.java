@@ -1,4 +1,4 @@
-package tasktimer;
+package tasktimer.object;
 
 import java.io.InputStream;
 
@@ -8,7 +8,7 @@ import java.io.InputStream;
 public class Dictionary {
 
 	public static InputStream getWordsAsStream() {
-		String fileName = "wordlist.txt";
+		String fileName = "tasktimer/wordlist.txt";
 
 		return TaskTimer.class.getClassLoader().getResourceAsStream(fileName);
 

@@ -1,4 +1,4 @@
-package tasktimer;
+package tasktimer.object;
 
 import java.util.function.IntConsumer;
 

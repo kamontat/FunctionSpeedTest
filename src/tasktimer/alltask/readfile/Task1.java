@@ -1,4 +1,4 @@
-package tasktimer.task;
+package tasktimer.alltask.readfile;
 
 import java.util.*;
 
@@ -9,7 +9,7 @@ import java.util.*;
  * Created by kamontat on 5/5/59.
  */
 public class Task1 implements Runnable {
-	private Scanner in = new Scanner(tasktimer.Dictionary.getWordsAsStream());
+	private Scanner in = new Scanner(tasktimer.object.Dictionary.getWordsAsStream());
 
 	@Override
 	public void run() {

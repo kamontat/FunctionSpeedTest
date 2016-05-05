@@ -1,4 +1,4 @@
-package tasktimer;
+package tasktimer.timer;
 
 /**
  * Created by kamontat on 5/5/59.

@@ -1,6 +1,6 @@
-package tasktimer;
+package tasktimer.object;
 
-import tasktimer.task.Task1;
+import tasktimer.timer.StopWatch;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import static java.lang.System.out;
  */
 public class TaskTimer {
 
-	// Limit number of words read.  Otherwise, the next task could be very sloooow.
+	// Limit number of words read.  Otherwise, the next alltask could be very sloooow.
 	static final int MAXCOUNT = 50_000;
 
 	/**
@@ -32,7 +32,7 @@ public class TaskTimer {
 			return;
 		}
 
-		out.println("Starting task: append " + MAXCOUNT + " words to a String using +");
+		out.println("Starting alltask: append " + MAXCOUNT + " words to a String using +");
 		long starttime = System.nanoTime();
 		String result = "";
 		String word = null;
@@ -63,7 +63,7 @@ public class TaskTimer {
 			return;
 		}
 
-		out.println("Starting task: append " + MAXCOUNT + " words to a StringBuilder");
+		out.println("Starting alltask: append " + MAXCOUNT + " words to a StringBuilder");
 		long starttime = System.nanoTime();
 		StringBuilder result = new StringBuilder();
 		String word = null;
@@ -81,21 +81,9 @@ public class TaskTimer {
 		out.printf("Elapsed time is %f sec\n", (stoptime - starttime) * 1.0E-9);
 	}
 
-
-	/**
-	 * Run all the tasks.
-	 */
-	public static void main(String[] args) {
-
-
-		execAndPrint(new Task1());
-
-
-	}
-
 	public static void execAndPrint(Runnable task) {
 		StopWatch watch = new StopWatch();
-		System.out.println("Starting task: " + task.toString());
+		System.out.println("Starting alltask: " + task.toString());
 
 		watch.start();
 		task.run();

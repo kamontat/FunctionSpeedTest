@@ -1,6 +1,6 @@
-package tasktimer.task;
+package tasktimer.alltask.readfile;
 
-import tasktimer.Dictionary;
+import tasktimer.object.Dictionary;
 
 import java.io.BufferedReader;
 import java.io.IOException;
