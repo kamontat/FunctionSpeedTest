@@ -4,10 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.logging.Logger;
 
 /**
@@ -27,9 +24,9 @@ public class Registrar {
 		students = new ArrayList<Student>();
 		// read the student date and create students
 		InputStream in = openInputStream(STUDENT_URL);
-		Scanner iter = new Scanner(in);
-		while( iter.hasNextLine() ) {
-			String line = iter.nextLine();
+		Scanner input = new Scanner(in);
+		while( input.hasNextLine() ) {
+			String line = input.nextLine();
 			// Line should contain 4 values separated by comma
 			String [] args = line.split(SEPARATOR);
 			if (args.length != 4) {
@@ -38,7 +35,7 @@ public class Registrar {
 			}
 			students.add( new Student(args[0], args[1], args[2], args[3]) );
 		}
-		iter.close();
+		input.close();
 	}
 	
 	/**

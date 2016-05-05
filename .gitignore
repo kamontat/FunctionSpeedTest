@@ -1,4 +1,4 @@
-/bin
+# /bin
 *.class
 
 # eclipse project files
@@ -7,35 +7,7 @@
 .settings/
 .checkstyle
 
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
-/bin
+# intellij Idea
+*.iml
+out/
+.idea/
