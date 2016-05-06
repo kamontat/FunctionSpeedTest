@@ -17,14 +17,18 @@ public class Student {
 	 * Initialize attributes of a new student
 	 *
 	 * @param id
-	 * @param firstname
-	 * @param lastname
-	 * @param birthdate
+	 * 		student ID
+	 * @param firstName
+	 * 		first name
+	 * @param lastName
+	 * 		last name
+	 * @param birthday
+	 * 		birthday
 	 */
-	public Student(String id, String firstname, String lastname, String birthday) {
+	public Student(String id, String firstName, String lastName, String birthday) {
 		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
+		this.firstname = firstName;
+		this.lastname = lastName;
 		// date should be in the format "dd/MM/yyyy"
 		setBirthdate(birthday);
 	}
@@ -32,7 +36,7 @@ public class Student {
 	/**
 	 * Get the student's first name.
 	 *
-	 * @return the firstname
+	 * @return the first name
 	 */
 	public String getFirstname() {
 		return firstname;
@@ -41,7 +45,7 @@ public class Student {
 	/**
 	 * Get the student's last name.
 	 *
-	 * @return the lastname
+	 * @return the last name
 	 */
 	public String getLastname() {
 		return lastname;
@@ -66,7 +70,7 @@ public class Student {
 	}
 	
 	/**
-	 * A hacky method for setting the birthdate using String.
+	 * A hacky method for setting the birth date using String.
 	 *
 	 * @param datestr
 	 * 		is a String containing birthday in the format "dd/mm/yyyy".

@@ -82,6 +82,5 @@ public class Registrar {
 	public static void main( String[] args) {
 		Registrar regis = Registrar.getInstance();
 		regis.getStudents().forEach( System.out::println );
-		
 	}
 }

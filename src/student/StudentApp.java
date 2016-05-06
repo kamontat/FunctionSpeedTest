@@ -17,35 +17,36 @@ public class StudentApp {
 	 * specified month.
 	 *
 	 * @param students
-	 * 		list of students
+	 * 		all students in program
 	 * @param filter
-	 * 		condition of student
+	 * 		filter students
+	 * @param action
+	 * 		action to do something (example print)
+	 * @param by
+	 * 		sort output
 	 */
 	public void filterAndPrint(List<Student> students, Predicate<Student> filter, Consumer<Student> action, Comparator<Student> by) {
 		students.stream().filter(filter).sorted(by).forEach(action);
 	}
 	
 	public static void main(String[] args) {
+		// month to filter
 		Month month = Month.MAY;
 
 		List<Student> students = Registrar.getInstance().getStudents();
 		StudentApp app = new StudentApp();
 
+		// filter the collection
 		Predicate<Student> predicate = s -> s.getBirthdate().getMonth().equals(month);
+
+		// action
 		Consumer<Student> consumer = s -> System.out.println(s.toString());
 
-		Comparator<Student> byFirstName = (s1, s2) -> {
-			return s1.getFirstname().compareTo(s2.getFirstname());
-		};
-		Comparator<Student> byLastName = (s1, s2) -> {
-			return s1.getLastname().compareTo(s2.getLastname());
-		};
-		Comparator<Student> byBirthDate = (s1, s2) -> {
-			return s1.getBirthdate().compareTo(s2.getBirthdate());
-		};
-		Comparator<Student> byID = (s1, s2) -> {
-			return s1.getId().compareTo(s2.getId());
-		};
+		// sort the collection
+		Comparator<Student> byFirstName = (s1, s2) -> s1.getFirstname().compareTo(s2.getFirstname());
+		Comparator<Student> byLastName = (s1, s2) -> s1.getLastname().compareTo(s2.getLastname());
+		Comparator<Student> byBirthDate = (s1, s2) -> s1.getBirthdate().compareTo(s2.getBirthdate());
+		Comparator<Student> byID = (s1, s2) -> s1.getId().compareTo(s2.getId());
 
 		app.filterAndPrint(students, predicate, consumer, byLastName);
 	}
