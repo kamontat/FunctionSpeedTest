@@ -2,6 +2,7 @@ package student;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 /**
  * A student with a name, student id, and birthday.
@@ -74,7 +75,7 @@ public class Student {
 	 *
 	 * @param datestr
 	 * 		is a String containing birthday in the format "dd/mm/yyyy".
-	 * @throws IllegalArgumentException
+	 * @throws DateTimeParseException
 	 * 		if datestr is not in the correct format.
 	 */
 	private void setBirthdate(String datestr) {
