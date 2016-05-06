@@ -6,7 +6,7 @@ import tasktimer.timer.StopWatch;
  * Time how long it takes to perform some tasks
  * using different programming constructs.
  * <p>
- * TODO Improve this code by restructuring it to eliminate duplicate code.
+ * Created by kamontat on 5/5/59.
  */
 public class TaskTimer {
 	public static void execAndPrint(Runnable task) {

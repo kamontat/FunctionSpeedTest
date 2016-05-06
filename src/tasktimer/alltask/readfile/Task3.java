@@ -31,6 +31,9 @@ public class Task3 implements Runnable {
 		}
 	}
 
+	/**
+	 * run this task (3)
+	 */
 	@Override
 	public void run() {
 		IntCounter counter = new IntCounter();
@@ -47,6 +50,11 @@ public class Task3 implements Runnable {
 		}
 	}
 
+	/**
+	 * return String that explain this task (3)
+	 *
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "read words using BufferedReader and Stream";

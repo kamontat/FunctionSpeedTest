@@ -24,6 +24,9 @@ public class Task2 implements Runnable {
 		}
 	}
 
+	/**
+	 * run this task (2)
+	 */
 	@Override
 	public void run() {
 		int count = 0;
@@ -47,6 +50,11 @@ public class Task2 implements Runnable {
 		}
 	}
 
+	/**
+	 * return String that explain this task (2)
+	 *
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "read words using BufferedReader.readLine() with a loop";

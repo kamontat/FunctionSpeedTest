@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 /**
  * The Registrar maintains a List of students.
  * This class is a Singleton.
- *
  */
 public class Registrar {
 	private static final String STUDENT_URL = "http://se.cpe.ku.ac.th/students.csv";
@@ -25,25 +24,26 @@ public class Registrar {
 		// read the student date and create students
 		InputStream in = openInputStream(STUDENT_URL);
 		Scanner input = new Scanner(in);
-		while( input.hasNextLine() ) {
+		while (input.hasNextLine()) {
 			String line = input.nextLine();
 			// Line should contain 4 values separated by comma
-			String [] args = line.split(SEPARATOR);
+			String[] args = line.split(SEPARATOR);
 			if (args.length != 4) {
-				Logger.getLogger( this.getClass().getName() ).warning("invalid student data: "+line);
+				Logger.getLogger(this.getClass().getName()).warning("invalid student data: " + line);
 				continue;
 			}
-			students.add( new Student(args[0], args[1], args[2], args[3]) );
+			students.add(new Student(args[0], args[1], args[2], args[3]));
 		}
 		input.close();
 	}
 	
 	/**
 	 * Get the single instance of this class.
-	 * @return the Registrar 
+	 *
+	 * @return the Registrar
 	 */
 	public static Registrar getInstance() {
-		if (registrar == null) synchronized(Registrar.class) {
+		if (registrar == null) synchronized (Registrar.class) {
 			if (registrar == null) registrar = new Registrar();
 		}
 		return registrar;
@@ -56,10 +56,14 @@ public class Registrar {
 	
 	/**
 	 * Create an InputStream for reading from a URL.
-	 * @param urlstring the URL to read from
+	 *
+	 * @param urlstring
+	 * 		the URL to read from
 	 * @return an InputStream connected to the URL.
-	 * @throws MalformedURLException if parameter is not a valid URL
-	 * @throws IOException if any problem reading from the URL
+	 * @throws MalformedURLException
+	 * 		if parameter is not a valid URL
+	 * @throws IOException
+	 * 		if any problem reading from the URL
 	 */
 	private static InputStream openInputStream(String urlstring) {
 		// open URL for student data and create a buffered reader
@@ -77,10 +81,11 @@ public class Registrar {
 	
 	/**
 	 * Test getting students from the registrar.
+	 *
 	 * @param args
 	 */
-	public static void main( String[] args) {
+	public static void main(String[] args) {
 		Registrar regis = Registrar.getInstance();
-		regis.getStudents().forEach( System.out::println );
+		regis.getStudents().forEach(System.out::println);
 	}
 }

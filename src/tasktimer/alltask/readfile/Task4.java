@@ -28,6 +28,9 @@ public class Task4 implements Runnable {
 		}
 	}
 
+	/**
+	 * run this task (4)
+	 */
 	@Override
 	public void run() {
 		// We want the Consumer to add to the count and total length,
@@ -54,6 +57,11 @@ public class Task4 implements Runnable {
 		System.out.printf("Average length of %,d words is %.2f\n", count, averageLength);
 	}
 
+	/**
+	 * return String that explain this task (4)
+	 *
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "read words using BufferedReader and Stream with Collector";

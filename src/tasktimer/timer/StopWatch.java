@@ -1,6 +1,8 @@
 package tasktimer.timer;
 
 /**
+ * clock object that can run timer of the program
+ * <p>
  * Created by kamontat on 5/5/59.
  */
 public class StopWatch {

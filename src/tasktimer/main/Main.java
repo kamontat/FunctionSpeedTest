@@ -5,7 +5,8 @@ import tasktimer.alltask.readfile.*;
 import tasktimer.alltask.concatstring.*;
 
 /**
- * Created by kamontat on 5/5/59.
+ * @author kamontat
+ * @since 5/5/59
  */
 public class Main {
 	public static void main(String[] args) {

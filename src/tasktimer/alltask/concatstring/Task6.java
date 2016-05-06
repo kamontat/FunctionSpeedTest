@@ -25,6 +25,9 @@ public class Task6 implements Runnable {
 		}
 	}
 
+	/**
+	 * run this task (6)
+	 */
 	@Override
 	public void run() {
 		StringBuilder result = new StringBuilder();
@@ -41,6 +44,11 @@ public class Task6 implements Runnable {
 		System.out.printf("Done appending %d words to StringBuilder.\n", count);
 	}
 
+	/**
+	 * return String that explain this task (6)
+	 *
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "append " + maxCount + " words to a StringBuilder";
