@@ -7,6 +7,7 @@ import java.io.InputStream;
  * Created by kamontat on 5/5/59.
  */
 public class Dictionary {
+	public static String fileName = "tasktimer/wordlist.txt";
 
 	/**
 	 * read file from <b>"tasktimer/wordlist.txt"</b> and get into inputStream
@@ -14,7 +15,6 @@ public class Dictionary {
 	 * @return the inputStream
 	 */
 	public static InputStream getWordsAsStream() {
-		String fileName = "tasktimer/wordlist.txt";
 		return TaskTimer.class.getClassLoader().getResourceAsStream(fileName);
 	}
 }

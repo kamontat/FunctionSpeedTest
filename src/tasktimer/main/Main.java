@@ -14,6 +14,7 @@ public class Main {
 		TaskTimer.execAndPrint(new Task2());
 		TaskTimer.execAndPrint(new Task3());
 		TaskTimer.execAndPrint(new Task4());
+		TaskTimer.execAndPrint(new TaskByMe());
 		TaskTimer.execAndPrint(new Task5(30000));
 		TaskTimer.execAndPrint(new Task6(30000));
 	}

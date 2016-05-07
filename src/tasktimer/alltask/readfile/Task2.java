@@ -1,6 +1,5 @@
 package tasktimer.alltask.readfile;
 
-import tasktimer.alltask.concatstring.Task6;
 import tasktimer.object.Dictionary;
 
 import java.io.BufferedReader;
@@ -14,7 +13,7 @@ import java.io.InputStreamReader;
  * <p>
  * Created by kamontat on 5/5/59.
  */
-public class Task2 extends Task6 implements Runnable {
+public class Task2 implements Runnable {
 	private BufferedReader br;
 
 	public Task2() {
