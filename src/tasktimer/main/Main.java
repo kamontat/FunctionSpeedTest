@@ -1,21 +1,16 @@
 package tasktimer.main;
 
 import tasktimer.object.TaskTimer;
-import tasktimer.alltask.readfile.*;
-import tasktimer.alltask.concatstring.*;
 
 /**
  * @author kamontat
  * @since 5/5/59
  */
 public class Main {
+	// create new long[] with 500000 element
+	public static long[] arrays = new long[500000];
+
 	public static void main(String[] args) {
-		TaskTimer.execAndPrint(new Task1());
-		TaskTimer.execAndPrint(new Task2());
-		TaskTimer.execAndPrint(new Task3());
-		TaskTimer.execAndPrint(new Task4());
-		TaskTimer.execAndPrint(new TaskByMe());
-		TaskTimer.execAndPrint(new Task5(30000));
-		TaskTimer.execAndPrint(new Task6(30000));
+		TaskTimer.execAndPrint();
 	}
 }
